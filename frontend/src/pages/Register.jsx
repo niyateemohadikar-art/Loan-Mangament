@@ -61,45 +61,55 @@ const Register = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
-            <div className="relative">
-              <HiOutlineUser className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input type="text" className="input-field pl-11" placeholder="Enter your full name"
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-10 flex items-center justify-center text-slate-500 bg-transparent rounded-md">
+                <HiOutlineUser className="text-slate-500" />
+              </div>
+              <input type="text" className="input-field flex-1" placeholder="Enter your full name"
                 value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
-            <div className="relative">
-              <HiOutlineMail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input type="email" className="input-field pl-11" placeholder="Enter your email"
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-10 flex items-center justify-center text-slate-500 bg-transparent rounded-md">
+                <HiOutlineMail className="text-slate-500" />
+              </div>
+              <input type="email" className="input-field flex-1" placeholder="Enter your email"
                 value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required />
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Phone Number</label>
-            <div className="relative">
-              <HiOutlinePhone className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input type="tel" className="input-field pl-11" placeholder="Enter your phone number"
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-10 flex items-center justify-center text-slate-500 bg-transparent rounded-md">
+                <HiOutlinePhone className="text-slate-500" />
+              </div>
+              <input type="tel" className="input-field flex-1" placeholder="Enter your phone number"
                 value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Password</label>
-            <div className="relative">
-              <HiOutlineLockClosed className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input type="password" className="input-field pl-11" placeholder="Create a password (min 6 chars)"
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-10 flex items-center justify-center text-slate-500 bg-transparent rounded-md">
+                <HiOutlineLockClosed className="text-slate-500" />
+              </div>
+              <input type="password" className="input-field flex-1" placeholder="Create a password (min 6 chars)"
                 value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} required />
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Confirm Password</label>
-            <div className="relative">
-              <HiOutlineLockClosed className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input type="password" className="input-field pl-11" placeholder="Confirm your password"
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-10 flex items-center justify-center text-slate-500 bg-transparent rounded-md">
+                <HiOutlineLockClosed className="text-slate-500" />
+              </div>
+              <input type="password" className="input-field flex-1" placeholder="Confirm your password"
                 value={formData.confirmPassword} onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })} required />
             </div>
           </div>

@@ -54,9 +54,11 @@ app.use((err, req, res, next) => {
 // Start server
 const start = async () => {
   try {
+    console.log('📡 SUPABASE_DB_URL:', process.env.SUPABASE_DB_URL?.replace(/:[^@]+@/, ':****@'));
     console.log('📡 Attempting to initialize database...');
     await initDatabase();
   } catch (error) {
+    console.error('❌ Database initialization error:', error);
     console.error('⚠️ Database initialization failed. Server will run in DEMO MODE.');
   }
 

@@ -56,11 +56,13 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
-            <div className="relative">
-              <HiOutlineMail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-10 flex items-center justify-center text-slate-500 bg-transparent rounded-md">
+                <HiOutlineMail className="text-slate-500" />
+              </div>
               <input
                 type="email"
-                className="input-field pl-11"
+                className="input-field flex-1"
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -71,23 +73,27 @@ const Login = () => {
 
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Password</label>
-            <div className="relative">
-              <HiOutlineLockClosed className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input
-                type={showPassword ? 'text' : 'password'}
-                className="input-field pl-11 pr-11"
-                placeholder="Enter your password"
-                value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                required
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
-              >
-                {showPassword ? <HiOutlineEyeOff /> : <HiOutlineEye />}
-              </button>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-10 flex items-center justify-center text-slate-500 bg-transparent rounded-md">
+                <HiOutlineLockClosed className="text-slate-500" />
+              </div>
+              <div className="relative flex-1">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  className="input-field pr-11 w-full"
+                  placeholder="Enter your password"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
+                >
+                  {showPassword ? <HiOutlineEyeOff /> : <HiOutlineEye />}
+                </button>
+              </div>
             </div>
           </div>
 
