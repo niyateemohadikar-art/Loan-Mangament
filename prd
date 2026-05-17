@@ -1,0 +1,607 @@
+Product Requirements Document (PRD)
+Smart Loan Lifecycle Management System
+
+1. Project Overview
+Product Name
+Smart Loan Lifecycle Management System
+Product Type
+Web-based Financial Management Platform
+Domain
+FinTech / NBFC / Banking
+Purpose
+The purpose of this platform is to digitally manage the complete loan lifecycle process for NBFCs and banks, including loan application, document verification, approval workflow, EMI generation, repayment tracking, analytics, and defaulter management.
+The system will help financial institutions reduce manual operations, improve loan processing speed, enhance transparency, and provide better customer service.
+
+2. Problem Statement
+Traditional loan management systems rely heavily on manual paperwork and disconnected workflows, leading to:
+
+
+Slow loan approvals
+
+
+Data management issues
+
+
+Human errors
+
+
+Poor repayment tracking
+
+
+Delayed customer communication
+
+
+Difficult defaulter management
+
+
+A centralized digital solution is required to automate and streamline the loan management process.
+
+3. Objectives
+
+
+Automate the loan lifecycle process
+
+
+Provide secure borrower onboarding
+
+
+Enable digital document management
+
+
+Simplify loan approval workflows
+
+
+Automate EMI schedule generation
+
+
+Provide real-time repayment tracking
+
+
+Improve transparency and reporting
+
+
+Reduce operational costs
+
+
+
+4. Target Users
+Borrowers
+People applying for personal, education, vehicle, or business loans.
+Loan Officers
+Employees responsible for application verification and approval.
+Admin
+System administrators managing users, loans, and reports.
+
+5. Tech Stack
+TechnologyPurposeReact.jsFrontendNode.js + Express.jsBackend APIsPostgreSQLDatabaseStripePayment GatewayjsPDFPDF GenerationRechartsAnalytics ChartsTailwind CSSUI Styling
+
+6. Functional Requirements
+6.1 Authentication Module
+Features
+
+
+User Registration
+
+
+User Login
+
+
+JWT Authentication
+
+
+Password Encryption
+
+
+Role-Based Access Control
+
+
+Forgot Password
+
+
+User Roles
+
+
+Borrower
+
+
+Loan Officer
+
+
+Admin
+
+
+
+6.2 Borrower Dashboard
+Features
+
+
+View active loans
+
+
+Track loan status
+
+
+View EMI schedule
+
+
+Make repayments
+
+
+Download statements
+
+
+Upload documents
+
+
+
+6.3 Loan Application Module
+Features
+
+
+Loan application form
+
+
+Loan type selection
+
+
+Income details
+
+
+Employment details
+
+
+Loan amount & tenure selection
+
+
+Form validation
+
+
+Save draft
+
+
+
+6.4 Document Upload Module
+Supported Documents
+
+
+Aadhaar Card
+
+
+PAN Card
+
+
+Salary Slips
+
+
+Bank Statements
+
+
+Address Proof
+
+
+Features
+
+
+Drag-and-drop upload
+
+
+File preview
+
+
+Upload status tracking
+
+
+
+6.5 Loan Verification & Approval Module
+Features
+
+
+Application review
+
+
+Document verification
+
+
+Eligibility assessment
+
+
+Approval/Rejection workflow
+
+
+Remarks & comments
+
+
+Status updates
+
+
+Status Types
+
+
+Pending
+
+
+Under Review
+
+
+Approved
+
+
+Rejected
+
+
+
+6.6 EMI Management Module
+Features
+
+
+Automatic EMI calculation
+
+
+EMI schedule generation
+
+
+Interest calculation
+
+
+Due date generation
+
+
+EMI Formula:
+EMI=P×R×(1+R)N(1+R)N−1EMI = \frac{P \times R \times (1+R)^N}{(1+R)^N - 1}EMI=(1+R)N−1P×R×(1+R)N​
+
+6.7 Payment Module
+Features
+
+
+Online EMI payment
+
+
+Stripe integration
+
+
+Payment confirmation
+
+
+Transaction history
+
+
+Auto receipt generation
+
+
+Payment Methods
+
+
+UPI
+
+
+Debit/Credit Card
+
+
+Net Banking
+
+
+
+6.8 Repayment Tracking Module
+Features
+
+
+EMI tracking
+
+
+Pending payment monitoring
+
+
+Late payment tracking
+
+
+Payment history
+
+
+Outstanding balance calculation
+
+
+
+6.9 Defaulter Management Module
+Features
+
+
+Detect overdue EMIs
+
+
+Generate alerts
+
+
+Defaulter listing
+
+
+Penalty calculation
+
+
+
+6.10 Admin Dashboard
+Features
+
+
+Total loans overview
+
+
+Approved vs rejected loans
+
+
+Revenue analytics
+
+
+EMI collection reports
+
+
+Defaulter reports
+
+
+Charts
+
+
+Line Chart
+
+
+Pie Chart
+
+
+Bar Graph
+
+
+Area Chart
+
+
+Using Recharts.
+
+7. Non-Functional Requirements
+Performance
+
+
+Fast API response time
+
+
+Efficient database queries
+
+
+Security
+
+
+HTTPS
+
+
+JWT authentication
+
+
+Password hashing
+
+
+SQL injection prevention
+
+
+Secure payment handling
+
+
+Scalability
+
+
+Modular architecture
+
+
+Cloud-ready deployment
+
+
+Availability
+
+
+24/7 accessibility
+
+
+Usability
+
+
+Responsive UI
+
+
+Mobile-friendly design
+
+
+Easy navigation
+
+
+
+8. Database Requirements
+Tables
+Users
+Stores account information.
+Loan Applications
+Stores loan requests and statuses.
+Documents
+Stores uploaded files.
+EMI Schedules
+Stores repayment schedules.
+Payments
+Stores transaction records.
+
+9. API Requirements
+Authentication APIs
+POST /api/auth/registerPOST /api/auth/loginPOST /api/auth/forgot-password
+
+Loan APIs
+POST /api/loan/applyGET /api/loan/:idPUT /api/loan/approvePUT /api/loan/reject
+
+EMI APIs
+GET /api/emi/:loanId
+
+Payment APIs
+POST /api/payment/createPOST /api/payment/webhook
+
+10. UI/UX Requirements
+Design Style
+
+
+Modern fintech dashboard
+
+
+Clean layout
+
+
+Professional color palette
+
+
+Responsive design
+
+
+Main Pages
+
+
+Landing Page
+
+
+Login/Register
+
+
+Borrower Dashboard
+
+
+Admin Dashboard
+
+
+Loan Application
+
+
+EMI Tracker
+
+
+Payment Page
+
+
+Reports & Analytics
+
+
+
+11. Reports & Analytics
+Reports
+
+
+Monthly collections
+
+
+Loan performance
+
+
+Defaulter reports
+
+
+Revenue reports
+
+
+Analytics
+
+
+Loan growth trends
+
+
+Approval ratio
+
+
+Repayment success rate
+
+
+
+12. Notifications System
+Types
+
+
+EMI reminders
+
+
+Loan approval notifications
+
+
+Payment success alerts
+
+
+Defaulter warnings
+
+
+Channels
+
+
+Email
+
+
+SMS
+
+
+Dashboard notifications
+
+
+
+13. Future Scope
+
+
+AI-based credit scoring
+
+
+OCR document verification
+
+
+Mobile app support
+
+
+Multi-language support
+
+
+AI chatbot support
+
+
+Blockchain-based records
+
+
+
+14. Deployment Requirements
+Frontend Hosting
+
+
+Vercel
+
+
+Backend Hosting
+
+
+Render
+
+
+Database Hosting
+
+
+Supabase
+
+
+
+15. Success Criteria
+The project will be considered successful if:
+
+
+Loan applications are processed digitally
+
+
+EMI schedules are generated automatically
+
+
+Online repayments work securely
+
+
+Admin can monitor all loans effectively
+
+
+Borrowers can track loans easily
+
+
+Reports and analytics provide accurate insights
+
+
+
+16. Conclusion
+The Smart Loan Lifecycle Management System is a scalable and secure fintech solution designed to modernize loan processing for NBFCs and banks. The platform automates loan management operations, enhances customer experience, improves repayment tracking, and provides powerful analytics for financial institutions.
